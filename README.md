@@ -2,7 +2,7 @@
 
 ### 📍 Context & Motivation
 
-India’s public transport system is vast, vital, and… deeply flawed. From overcrowded stations to unpredictable delays, the railways suffer from poor infrastructure, inconsistent management, and a lack of real-time planning tools. Train delays are not just an inconvenience, they are part of daily life, often leading to missed connections, lost goods, and collective frustration.
+India’s public transport system is vast, vital, and deeply flawed. From overcrowded stations to unpredictable delays, the railways suffer from poor infrastructure, inconsistent management, and a lack of real-time planning tools. Train delays are not just an inconvenience, they are part of daily life, often leading to missed connections, lost goods, and collective frustration.
 
 In this context, improving the **prediction of dwell time** (the time a train spends at a station) becomes a powerful lever to enhance efficiency and reduce chaos. This project was initiated in collaboration with an Indian railway company aiming to **predict their trains dwell times more accurately using ML models**.
 
