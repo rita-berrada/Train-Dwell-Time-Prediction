@@ -63,60 +63,141 @@ In this notebook we:
 
 ## 📊 Feature-by-Feature Insights (with Figures)
 
-**Inspection Requirement**  
+### Inspection Requirement
+Indicates whether a train needs to be inspected once it arrives at a station.  
+Various reasons: technical checks, routine maintenance, etc.  
+Binary flag:  
+- **Y** = Inspection is required  
+- **N** = No inspection needed  
+
 ![Inspection Requirement](figs/Inspection_Requirement.png)  
-Dwell time is higher when inspection is required.
+**Insight:** Dwell time is higher when inspection is required.
 
-**Is Holiday**  
-![Is Holiday](figs/IS_HOLIDAY.png)  
-Dwell time is lower on holidays.
+---
 
-**Train Priority**  
+### Is Holiday
+Indicates whether the train arrived on a national holiday in the United States.  
+Binary flag:  
+- **1** = Arrived on a holiday  
+- **0** = Did not arrive on a holiday  
+
+![IS_HOLIDAY](figs/IS_HOLIDAY.png)  
+**Insight:** Dwell time is lower on holidays — unexpected, as one might anticipate longer stops due to reduced staffing or special operations.
+
+---
+
+### Train Priority
+Each train is assigned a priority flag that indicates its operational importance.  
+
 ![Train Priority](figs/Train_Priority.png)  
-Dwell time varies with priority; H and M behave similarly.
+**Insight:** Dwell time varies with priority, with priorities H and M showing similar patterns.
 
-**Train Type**  
-![Train Type](figs/Train_Type.png)
+---
 
-**Mainline**  
+### Mainline
+If the train is on track 6398 or 6399, it is considered **Mainline**.  
+Binary flag:  
+- **1** = On mainline  
+- **0** = Not on mainline  
+
 ![Mainline Trains](figs/MainlineTrains.png)  
-No significant variation.
+**Insight:** No significant variation in dwell time between mainline and non-mainline trains.
 
-**Day of Week**  
+---
+
+### Day of Week
+Indicates on which day of the week the train arrived.  
+
 ![Day of Week](figs/Day_of_Week.png)  
-Increase from mid-week to weekend — lowest Wednesday, highest Saturday.
+**Insight:** Dwell times increase from mid-week to weekend — lowest on Wednesday, highest on Saturday.
 
-**Day Type**  
+---
+
+### Day Type
+Indicates whether the arrival day of trains is a weekday or weekend.  
+Binary flag:  
+- **1** = Weekend  
+- **0** = Weekday  
+
 ![Day Type](figs/Day_Type.png)  
-No significant variation.
+**Insight:** No significant variation between weekdays and weekends.
 
-**Month**  
+---
+
+### Month
+Indicates the month of arrival of trains.  
+
 ![Month](figs/Month.png)  
-Higher in June, February, December; lower in May and September.
+**Insight:** Dwell time varies significantly by month — higher in June, February, and December; lower in May and September.
 
-**Hour of Day**  
+---
+
+### Hour of Day
+Indicates the hour of the day when trains reach the station.  
+
 ![Hour of Day](figs/Hour_of_Day.png)  
-Peak at 1 pm.
+**Insight:** Dwell time varies across the day, with a peak at 1 pm.
 
-**All Trains**  
+---
+
+### All Trains
+Number of other trains present on the track at the same time as the train being analyzed (Train A).  
+Counts all trains that:  
+- Arrived before Train A and departed after its arrival, **or**  
+- Arrived after Train A but haven’t departed yet.  
+
 ![All Trains](figs/AllTrains.png)  
-Some variation as the number increases.
+**Insight:** Some variation in dwell time as the number of trains increases.
 
-**Yard Trains**  
-![Yard Trains](figs/YardTrains.png)
+---
 
-**Mainline Trains**  
+### Yard Trains
+Subset of "All Trains" that require inspection and cannot stay on the main track.  
+These trains are moved to the yard and counted as **YardTrains**.  
+
+![Yard Trains](figs/YardTrains.png)  
+**Insight:** Fluctuations in dwell time with the count of yard trains.
+
+---
+
+### Mainline Trains
+Subset of "All Trains" that don’t require inspection and stay on the mainline.  
+
 ![Mainline Trains](figs/MainlineTrains.png)  
-More mainline trains → higher dwell time.
+**Insight:** The more mainline trains present, the higher the dwell time.
 
-**Priority Trains**  
-![Priority Trains](figs/PriorityTrains.png)
+---
 
-**Priority Yard**  
-![Priority Yard](figs/PriorityYard.png)
+### Priority Trains
+Trains from "All Trains" set that are considered high priority.  
+High priority trains include: A, B, G, S, H, Q, Z, V.  
 
-**Priority Mainline**  
-![Priority Mainline](figs/PriorityMainline.png)
+![Priority Trains](figs/PriorityTrains.png)  
+**Insight:** Dwell time varies with different numbers of priority trains.
+
+---
+
+### Priority Yard
+Priority trains that are also yard trains.  
+
+![Priority Yard](figs/PriorityYard.png)  
+**Insight:** Dwell time increases as the number of priority yard trains rises.
+
+---
+
+### Priority Mainline
+Priority trains that are also mainline trains.  
+
+![Priority Mainline](figs/PriorityMainline.png)  
+**Insight:** Dwell time rises with the number of priority mainline trains.
+
+---
+
+### Feature Correlation
+Correlation analysis between all engineered features.  
+
+![Feature Correlation](figs/Feature_Correlation.png)
+
 
 ---
 
