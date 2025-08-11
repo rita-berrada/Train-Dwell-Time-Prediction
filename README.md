@@ -10,9 +10,9 @@ In this context, improving the **prediction of dwell time** (the time a train sp
 
 ### 🎯 Objective
 
-We focus on a particular set of trains and aim to model their **dwell time at the station "MINOT"**, which we define as the **last true change point** for all trains in the dataset.
+We focus on a particular set of trains and aim to model their **dwell time at the station "MINOT"**, which we define as the **last crue change point** for all trains in the dataset.
 
-> 🔎 **Dwell Time** = `Departure Time at MINOT – `Arrival Time at MINOT`
+> 🔎 **Dwell Time** = `Departure Time at MINOT – Arrival Time at MINOT`
 
 ---
 
