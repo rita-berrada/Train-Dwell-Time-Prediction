@@ -10,7 +10,7 @@ In this context, improving the **prediction of dwell time** (the time a train sp
 
 ### 🎯 Objective
 
-We focus on a particular set of trains and aim to model their **dwell time at the station "MyNotes"**, which we define as the **last true change point** for all trains in the dataset.
+We focus on a particular set of trains and aim to model their **dwell time at the station "MINOT"**, which we define as the **last crue change point** for all trains in the dataset.
 
 > 🔎 **Dwell Time** = `Departure Time at MINOT` – `Arrival Time at MINOT`
 
@@ -24,7 +24,6 @@ This project is structured in 4 main notebooks:
 
 ### `01_EDA_Dwell_Time_Data.ipynb`
 
-**"The AI of one-time data."**  
 We explore the raw dwell time dataset using a classic EDA workflow, with techniques commonly used in data science:
 
 - **Distribution plots** of dwell times
@@ -53,7 +52,7 @@ Outlier detection is essential to avoid skewed predictions. Here's how we tackle
 2. **Binning dwell time**:
    - Each train was assigned a bin according to its dwell time.
    - We **kept only bins** containing **at least 5%** of total trains.
-   - Calculated **lower and upper bounds** for each valid bin.
+   - We found **lower and upper bounds** 
 
 3. **Outlier flagging**:
    - An `IS_OUTLIER` flag was added to the entire dataset.
