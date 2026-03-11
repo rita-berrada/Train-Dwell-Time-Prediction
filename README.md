@@ -2,7 +2,7 @@
 
 ## Context
 
-This project was completed as part of an **Infosys InStep internship**, in collaboration with an **Indian railway company**. The goal was to build an end-to-end machine learning pipeline to predict **train dwell time** — the time a train spends stationary at a given station — using historical operational data.
+This project was completed as part of an **Infosys InStep internship**, in collaboration with an **Indian railway company**. The goal was to build an end-to-end machine learning pipeline to predict **train dwell time**, the time a train spends stationary at a given station, using historical operational data.
 
 Accurate dwell time prediction is a key input for real-time dispatching systems. It allows operators to anticipate delays, optimize track allocation, and improve overall network reliability.
 
@@ -12,7 +12,7 @@ Predict the **dwell time of trains at station MINOT**, defined as the last recor
 
 > **Dwell Time** = Departure Time at MINOT − Arrival Time at MINOT
 
-The problem is framed as a **regression task**. The train/test split is temporal — models are trained on data prior to January 1, 2024 and evaluated on 2024 records.
+The problem is framed as a **regression task**. The train/test split is temporal : models are trained on data prior to January 1, 2024 and evaluated on 2024 records.
 
 ## Data
 
@@ -43,7 +43,7 @@ graph LR
 
 ### 01 — Exploratory Data Analysis
 
-EDA on the main dwell time table, covering distribution analysis, categorical feature exploration, missing value handling, and basic cleaning. Dwell time is heavily right-skewed — most trains dwell under 5 hours, with some exceeding 100 hours.
+EDA on the main dwell time table, covering distribution analysis, categorical feature exploration, missing value handling, and basic cleaning. Dwell time is heavily right-skewed : most trains dwell under 5 hours, with some exceeding 100 hours.
 
 ![Dwell Distribution — Raw](figs/Dwell_Distribution_1.png)
 
@@ -51,7 +51,7 @@ EDA on the main dwell time table, covering distribution analysis, categorical fe
 
 IQR-based filtering was ineffective on this skewed distribution. A custom binning strategy was used instead: dwell times are binned with variable-width intervals, and any bin representing less than 5% of the training data is discarded. Records outside the surviving range are flagged as outliers.
 
-Valid dwell time range after filtering: **0.5h to 3.0h** — 290 outliers removed.
+Valid dwell time range after filtering: **0.5h to 3.0h** with 290 outliers removed.
 
 ![Dwell Distribution — After Outlier Removal](figs/Dwell_Distribution_2.png)
 
@@ -73,7 +73,7 @@ Congestion features count overlapping trains at the time of each arrival, broken
 
 ![Feature Correlation](figs/Feature_Correlation.png)
 
-An ElasticNet baseline was also run at the end of this notebook.
+
 
 ### 05 — Modeling
 
